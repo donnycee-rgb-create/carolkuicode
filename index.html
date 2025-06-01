@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carol Kui Premium Services - Research Softwares</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+    <img src="image/CAROL KUI 2.png" alt="Carol Kui Logo" class="logo-image" loading="lazy" />
+                   
+                </div>
+                <span class="brand-name">Carol Kui Premium Services</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio & Examples</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Premium</span>
+                    <span class="title-line highlight">Research Software</span>
+                    <span class="title-line">Solutions</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Access cutting-edge research tools with reliable services and affordable prices. 
+                    Your academic success is our priority.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('services')">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-phone"></i>
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Research Excellence</h3>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator" onclick="scrollToSection('services')">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Software Services</h2>
+                <p class="section-subtitle">Professional research tools to enhance your academic journey</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="turnitin">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Turnitin</h3>
+                    <p>Advanced plagiarism detection and academic integrity solutions</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Comprehensive plagiarism checking</li>
+                        <li><i class="fas fa-check"></i> Detailed similarity reports</li>
+                        <li><i class="fas fa-check"></i> Academic integrity tools</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openModal('turnitin')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-service="grammarly">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Premium Grammarly</h3>
+                    <p>Professional writing assistant with advanced grammar and style checking</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Advanced grammar correction</li>
+                        <li><i class="fas fa-check"></i> Style and tone suggestions</li>
+                        <li><i class="fas fa-check"></i> Plagiarism detection</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openModal('grammarly')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-service="quillbot">
+                    <div class="service-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Premium QuillBot</h3>
+                    <p>AI-powered paraphrasing and writing enhancement tool</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Intelligent paraphrasing</li>
+                        <li><i class="fas fa-check"></i> Multiple writing modes</li>
+                        <li><i class="fas fa-check"></i> Grammar and fluency enhancement</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openModal('quillbot')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-service="stealth">
+                    <div class="service-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Stealth Writer</h3>
+                    <p>Advanced content creation with privacy and originality</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Original content generation</li>
+                        <li><i class="fas fa-check"></i> Privacy-focused writing</li>
+                        <li><i class="fas fa-check"></i> Bypass AI detection</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openModal('stealth')">Learn More</button>
+                </div>
+
+                <div class="service-card" data-service="chatgpt">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ChatGPT 4.0</h3>
+                    <p>Advanced AI assistant for research and academic support</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Advanced AI conversations</li>
+                        <li><i class="fas fa-check"></i> Research assistance</li>
+                        <li><i class="fas fa-check"></i> Academic writing support</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openModal('chatgpt')">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-content">
+                <div class="features-text">
+                    <h2>Why Choose Carol Kui Premium Services?</h2>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Reliable Services</h3>
+                            <p>Dependable access to premium research tools with 99.9% uptime guarantee</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Affordable Prices</h3>
+                            <p>Competitive pricing that makes premium tools accessible to all researchers</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Reliability is My Priority</h3>
+                            <p>Your success matters to us. We ensure consistent, high-quality service delivery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-image">
+                    <div class="stats-card">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat">
+                            <h3>99.9%</h3>
+                            <p>Uptime</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Examples Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Portfolio & Examples</h2>
+                <p class="section-subtitle">See how our premium software solutions deliver real results</p>
+            </div>
+            <div class="portfolio-grid">
+<div class="portfolio-category">
+    <h3 class="category-title">
+        <i class="fas fa-shield-alt"></i>
+        Turnitin Reports
+    </h3>
+    <div class="portfolio-items">
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <img src="image/research analysis-turntin.png" alt="Turnitin Similarity Report Interface" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h4>Comprehensive Similarity Report</h4>
+                        <p>Detailed plagiarism analysis with source identification</p>
+                        <button class="btn btn-small">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-details">
+                <h4>Research Paper Analysis</h4>
+                <p>15% similarity score with detailed source breakdown</p>
+                <span class="portfolio-tag">Academic Paper</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <img src="image/interactive feedback-turntin.jpg" alt="Turnitin Feedback Studio Interface" loading="lazy" />
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h4>Feedback Studio Interface</h4>
+                        <p>Advanced commenting and grading tools</p>
+                        <button class="btn btn-small">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-details">
+                <h4>Interactive Feedback</h4>
+                <p>Real-time commenting and suggestion system</p>
+                <span class="portfolio-tag">Thesis Review</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <div class="portfolio-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-pen-fancy"></i>
+                        Grammarly Premium Results
+                    </h3>
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/Academic writing-grammarly.png" alt="Grammarly Writing Enhancement Interface" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>Writing Enhancement</h4>
+                                        <p>Before and after comparison showing improvements</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Academic Writing Improvement</h4>
+                                <p>Grammar, clarity, and style enhancements</p>
+                                <span class="portfolio-tag">Research Article</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/perfomance dashboard using grammarly.png" alt="Grammarly Writing Analytics Dashboard" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>Writing Performance Analytics</h4>
+                                        <p>Detailed insights into writing patterns and improvements</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Performance Dashboard</h4>
+                                <p>Weekly writing statistics and progress tracking</p>
+                                <span class="portfolio-tag">Progress Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-feather-alt"></i>
+                        QuillBot Paraphrasing
+                    </h3>
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/paraphrasing-quillbot.jpg" alt="QuillBot Paraphrasing Interface" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>Intelligent Paraphrasing</h4>
+                                        <p>Multiple paraphrasing modes for different writing styles</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Academic Paraphrasing</h4>
+                                <p>Formal tone with preserved meaning</p>
+                                <span class="portfolio-tag">Literature Review</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/sumary-quillbot.png" alt="QuillBot Text Summarization Tool" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>AI-Powered Summarization</h4>
+                                        <p>Extracting key points from lengthy documents</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Research Summary</h4>
+                                <p>Condensed 20-page paper into key insights</p>
+                                <span class="portfolio-tag">Summary Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-robot"></i>
+                        ChatGPT 4.0 Assistance
+                    </h3>
+                    <div class="portfolio-items">
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/methodology framework-chatgpt.png" alt="AI Research Assistant Interface" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>Research Methodology Support</h4>
+                                        <p>AI-assisted research planning and methodology development</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Methodology Framework</h4>
+                                <p>Structured research approach for PhD thesis</p>
+                                <span class="portfolio-tag">Research Design</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-image">
+                                <img src="image/chatgpt data analyst.png" alt="AI Data Analysis Dashboard" loading="lazy" />
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <h4>Data Analysis Support</h4>
+                                        <p>Statistical analysis interpretation and visualization guidance</p>
+                                        <button class="btn btn-small">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-details">
+                                <h4>Statistical Interpretation</h4>
+                                <p>Complex data analysis made simple</p>
+                                <span class="portfolio-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-stats">
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Improvement in Writing Quality</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Reduction in Plagiarism Issues</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">90%</div>
+                    <div class="stat-label">Faster Research Completion</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Portfolio Details -->
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="" />
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+                <span id="modalTag" class="portfolio-tag"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Hear from researchers who have transformed their academic work with our services</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b332c905?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Dr. Sarah Johnson - Professional Woman" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p>PhD Researcher, University of Nairobi</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Carol Kui's Turnitin service has been invaluable for my dissertation. The detailed similarity reports helped me ensure academic integrity while the affordable pricing made it accessible throughout my research journey."</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">Turnitin Premium</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Prof. Michael Kimani - Professional Man" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Prof. Michael Kimani</h4>
+                            <p>Research Director, JKUAT</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The Premium Grammarly service transformed our research team's writing quality. We've seen a 40% improvement in our publication acceptance rates since using Carol's services. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">Premium Grammarly</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Grace Wanjiku - Student" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Grace Wanjiku</h4>
+                            <p>Masters Student, Strathmore University</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"QuillBot Premium helped me paraphrase complex academic sources effectively. Carol's reliable service and quick support made my thesis writing process much smoother. Worth every penny!"</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">Premium QuillBot</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Dr. James Mwangi - Senior Academic" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Dr. James Mwangi</h4>
+                            <p>Senior Lecturer, Kenyatta University</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"ChatGPT 4.0 access through Carol's service has revolutionized my research methodology. The AI assistance in data analysis and literature review has saved me countless hours of work."</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">ChatGPT 4.0</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Mary Njeri - Young Student" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Mary Njeri</h4>
+                            <p>Undergraduate Student, UoN</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"As a student on a tight budget, Carol's affordable pricing for premium tools was a lifesaver. The Stealth Writer service helped me create original content for my final year project."</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">Stealth Writer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Prof. Anne Wambui - Department Head" loading="lazy" />
+                        </div>
+                        <div class="client-info">
+                            <h4>Prof. Anne Wambui</h4>
+                            <p>Department Head, CUEA</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Carol's reliability is unmatched. In 3 years of using her services, we've never experienced downtime. Her commitment to 'reliability as priority' is genuine and evident in her service delivery."</p>
+                    </div>
+                    <div class="testimonial-service">
+                        <span class="service-tag">All Services</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-summary">
+                <h3>Join 500+ Satisfied Researchers</h3>
+                <p>Experience the difference that reliable, premium research tools can make in your academic journey</p>
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    <i class="fas fa-user-plus"></i>
+                    Join Our Community
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="image/carolkuiphotolab.jpg" alt="Carol Kui Photo" class="about-photo" loading="lazy" />
+                </div>
+                <div class="about-text">
+                    <h2>About Carol Kui</h2>
+                    <p class="about-description">
+                        With years of experience in academic technology and research tools, 
+                        Carol Kui Premium Services has been helping students, researchers, and 
+                        academics achieve excellence in their work.
+                    </p>
+                    <p class="mission-statement">
+                        "Reliability is my priority" - I believe in providing consistent, 
+                        high-quality access to the tools that matter most for your research success.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>Trusted by 500+ researchers</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5+ years of experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to enhance your research capabilities? Contact us today!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+254 714 878363</p>
+                            <button class="btn btn-small" onclick="makeCall()">
+                                <i class="fas fa-phone"></i> Call Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>wanguicarol29@gmail.com</p>
+                            <button class="btn btn-small" onclick="sendEmail()">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="turnitin">Turnitin</option>
+                                <option value="grammarly">Premium Grammarly</option>
+                                <option value="quillbot">Premium QuillBot</option>
+                                <option value="stealth">Stealth Writer</option>
+                                <option value="chatgpt">ChatGPT 4.0</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-cog"></i>
+                            <span class="logo-text">CK</span>
+                        </div>
+                        <span class="brand-name">Carol Kui Premium Services</span>
+                    </div>
+                    <p>Your trusted partner for premium research software solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Turnitin</a></li>
+                        <li><a href="#services">Premium Grammarly</a></li>
+                        <li><a href="#services">Premium QuillBot</a></li>
+                        <li><a href="#services">Stealth Writer</a></li>
+                        <li><a href="#services">ChatGPT 4.0</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +254 714 878363</p>
+                        <p><i class="fas fa-envelope"></i> wanguicarol29@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Carol Kui Premium Services. All rights reserved.</p>
+                <p>Reliability is our priority</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modalTitle">Service Details</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-tabs">
+                    <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+                    <button class="tab-btn" onclick="switchTab('features')">Features</button>
+                    <button class="tab-btn" onclick="switchTab('pricing')">Pricing</button>
+                    <button class="tab-btn" onclick="switchTab('demo')">Demo</button>
+                </div>
+                
+                <div class="tab-content" id="overview-content">
+                    <div class="service-overview">
+                        <div class="service-icon-large">
+                            <i id="modalIcon" class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-description">
+                            <p id="modalDescription">Detailed service description will be loaded here.</p>
+                            <div class="service-benefits">
+                                <h4>Key Benefits:</h4>
+                                <ul id="modalBenefits">
+                                    <li>Benefit 1</li>
+                                    <li>Benefit 2</li>
+                                    <li>Benefit 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="features-content">
+                    <div class="features-grid">
+                        <div id="modalFeatures">
+                            <!-- Features will be dynamically loaded -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="pricing-content">
+                    <div class="pricing-section">
+                        <div id="modalPricing">
+                            <!-- Pricing will be dynamically loaded -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="demo-content">
+                    <div class="demo-section">
+                        <div id="modalDemo">
+                            <!-- Demo content will be dynamically loaded -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="contactForService()">
+                    <i class="fas fa-envelope"></i>
+                    Contact for This Service
+                </button>
+                <button class="btn btn-primary" onclick="getStarted()">
+                    <i class="fas fa-rocket"></i>
+                    Get Started Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

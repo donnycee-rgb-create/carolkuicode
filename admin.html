@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Carol Kui Premium Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-nav">
+            <div class="admin-logo">
+                <i class="fas fa-cog"></i>
+                <span>Carol Kui Admin</span>
+            </div>
+            <div class="admin-user">
+                <span>Welcome, Admin</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <nav class="admin-sidebar">
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="menu-item" data-section="hero">
+                <i class="fas fa-home"></i>
+                <span>Hero Section</span>
+            </li>
+            <li class="menu-item" data-section="services">
+                <i class="fas fa-tools"></i>
+                <span>Services</span>
+            </li>
+            <li class="menu-item" data-section="features">
+                <i class="fas fa-star"></i>
+                <span>Features</span>
+            </li>
+            <li class="menu-item" data-section="about">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </li>
+            <li class="menu-item" data-section="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact Info</span>
+            </li>
+            <li class="menu-item" data-section="messages">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Dashboard Section -->
+        <section class="admin-section active" id="dashboard">
+            <div class="section-header">
+                <h1>Dashboard Overview</h1>
+                <button class="btn-primary" onclick="previewSite()">
+                    <i class="fas fa-eye"></i>
+                    Preview Website
+                </button>
+            </div>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalMessages">0</h3>
+                        <p>Total Messages</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalServices">5</h3>
+                        <p>Active Services</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="lastUpdate">--</h3>
+                        <p>Last Update</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section Management -->
+        <section class="admin-section" id="hero">
+            <div class="section-header">
+                <h1>Hero Section</h1>
+                <button class="btn-success" onclick="saveHeroContent()">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+            <div class="content-form">
+                <div class="form-group">
+                    <label for="heroTitle">Main Title</label>
+                    <input type="text" id="heroTitle" placeholder="Premium Research Software Solutions">
+                </div>
+                <div class="form-group">
+                    <label for="heroSubtitle">Subtitle</label>
+                    <textarea id="heroSubtitle" rows="3" placeholder="Access cutting-edge research tools..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="heroImage">Hero Background Image</label>
+                    <input type="file" id="heroImage" accept="image/*">
+                    <div class="current-image" id="currentHeroImage">
+                        <p>Current image will be displayed here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section Management -->
+        <section class="admin-section" id="services">
+            <div class="section-header">
+                <h1>Services Management</h1>
+                <button class="btn-primary" onclick="addNewService()">
+                    <i class="fas fa-plus"></i>
+                    Add New Service
+                </button>
+            </div>
+            <div class="services-list">
+                <!-- Turnitin Service -->
+                <div class="service-item" data-service="turnitin">
+                    <div class="service-header">
+                        <h3><i class="fas fa-shield-alt"></i> Turnitin</h3>
+                        <div class="service-actions">
+                            <button class="btn-edit" onclick="editService('turnitin')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteService('turnitin')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" value="Turnitin" data-field="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Advanced plagiarism detection and academic integrity solutions</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea data-field="features" rows="3">Comprehensive plagiarism checking
+Detailed similarity reports
+Academic integrity tools</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pricing</label>
+                            <input type="text" data-field="pricing" placeholder="Enter pricing details">
+                        </div>
+                        <button class="btn-success" onclick="saveService('turnitin')">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grammarly Service -->
+                <div class="service-item" data-service="grammarly">
+                    <div class="service-header">
+                        <h3><i class="fas fa-pen-fancy"></i> Premium Grammarly</h3>
+                        <div class="service-actions">
+                            <button class="btn-edit" onclick="editService('grammarly')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteService('grammarly')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" value="Premium Grammarly" data-field="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Professional writing assistant with advanced grammar and style checking</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea data-field="features" rows="3">Advanced grammar correction
+Style and tone suggestions
+Plagiarism detection</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pricing</label>
+                            <input type="text" data-field="pricing" placeholder="Enter pricing details">
+                        </div>
+                        <button class="btn-success" onclick="saveService('grammarly')">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+
+                <!-- QuillBot Service -->
+                <div class="service-item" data-service="quillbot">
+                    <div class="service-header">
+                        <h3><i class="fas fa-feather-alt"></i> Premium QuillBot</h3>
+                        <div class="service-actions">
+                            <button class="btn-edit" onclick="editService('quillbot')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteService('quillbot')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" value="Premium QuillBot" data-field="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">AI-powered paraphrasing and writing enhancement tool</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea data-field="features" rows="3">Intelligent paraphrasing
+Multiple writing modes
+Grammar and fluency enhancement</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pricing</label>
+                            <input type="text" data-field="pricing" placeholder="Enter pricing details">
+                        </div>
+                        <button class="btn-success" onclick="saveService('quillbot')">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stealth Writer Service -->
+                <div class="service-item" data-service="stealth">
+                    <div class="service-header">
+                        <h3><i class="fas fa-user-secret"></i> Stealth Writer</h3>
+                        <div class="service-actions">
+                            <button class="btn-edit" onclick="editService('stealth')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteService('stealth')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" value="Stealth Writer" data-field="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Advanced content creation with privacy and originality</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea data-field="features" rows="3">Original content generation
+Privacy-focused writing
+Bypass AI detection</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pricing</label>
+                            <input type="text" data-field="pricing" placeholder="Enter pricing details">
+                        </div>
+                        <button class="btn-success" onclick="saveService('stealth')">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ChatGPT Service -->
+                <div class="service-item" data-service="chatgpt">
+                    <div class="service-header">
+                        <h3><i class="fas fa-robot"></i> ChatGPT 4.0</h3>
+                        <div class="service-actions">
+                            <button class="btn-edit" onclick="editService('chatgpt')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-delete" onclick="deleteService('chatgpt')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" value="ChatGPT 4.0" data-field="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Advanced AI assistant for research and academic support</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Features (one per line)</label>
+                            <textarea data-field="features" rows="3">Advanced AI conversations
+Research assistance
+Academic writing support</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pricing</label>
+                            <input type="text" data-field="pricing" placeholder="Enter pricing details">
+                        </div>
+                        <button class="btn-success" onclick="saveService('chatgpt')">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section Management -->
+        <section class="admin-section" id="features">
+            <div class="section-header">
+                <h1>Features Section</h1>
+                <button class="btn-success" onclick="saveFeaturesContent()">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+            <div class="content-form">
+                <div class="form-group">
+                    <label for="featuresTitle">Section Title</label>
+                    <input type="text" id="featuresTitle" value="Why Choose Carol Kui Premium Services?">
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <h4>Feature 1</h4>
+                        <div class="form-group">
+                            <label>Icon Class</label>
+                            <input type="text" value="fas fa-award" data-field="icon">
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" value="Reliable Services" data-field="title">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Dependable access to premium research tools with 99.9% uptime guarantee</textarea>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Feature 2</h4>
+                        <div class="form-group">
+                            <label>Icon Class</label>
+                            <input type="text" value="fas fa-dollar-sign" data-field="icon">
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" value="Affordable Prices" data-field="title">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Competitive pricing that makes premium tools accessible to all researchers</textarea>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Feature 3</h4>
+                        <div class="form-group">
+                            <label>Icon Class</label>
+                            <input type="text" value="fas fa-heart" data-field="icon">
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" value="Reliability is My Priority" data-field="title">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea data-field="description" rows="2">Your success matters to us. We ensure consistent, high-quality service delivery</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-section">
+                    <h4>Statistics</h4>
+                    <div class="stats-form">
+                        <div class="form-group">
+                            <label>Happy Clients</label>
+                            <input type="number" value="500" data-stat="clients">
+                        </div>
+                        <div class="form-group">
+                            <label>Uptime %</label>
+                            <input type="text" value="99.9" data-stat="uptime">
+                        </div>
+                        <div class="form-group">
+                            <label>Support Hours</label>
+                            <input type="text" value="24/7" data-stat="support">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section Management -->
+        <section class="admin-section" id="about">
+            <div class="section-header">
+                <h1>About Section</h1>
+                <button class="btn-success" onclick="saveAboutContent()">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+            <div class="content-form">
+                <div class="form-group">
+                    <label for="aboutTitle">Title</label>
+                    <input type="text" id="aboutTitle" value="About Carol Kui">
+                </div>
+                <div class="form-group">
+                    <label for="aboutDescription">Description</label>
+                    <textarea id="aboutDescription" rows="4">With years of experience in academic technology and research tools, Carol Kui Premium Services has been helping students, researchers, and academics achieve excellence in their work.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="missionStatement">Mission Statement</label>
+                    <textarea id="missionStatement" rows="3">"Reliability is my priority" - I believe in providing consistent, high-quality access to the tools that matter most for your research success.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="aboutImage">Profile Image</label>
+                    <input type="file" id="aboutImage" accept="image/*">
+                    <div class="current-image" id="currentAboutImage">
+                        <img src="image/carolkuiphotolab.jpg" alt="Current profile image" style="max-width: 200px;">
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <h4>About Statistics</h4>
+                    <div class="form-group">
+                        <label>Years of Experience</label>
+                        <input type="number" value="5" data-stat="experience">
+                    </div>
+                    <div class="form-group">
+                        <label>Trusted Researchers</label>
+                        <input type="number" value="500" data-stat="researchers">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section Management -->
+        <section class="admin-section" id="contact">
+            <div class="section-header">
+                <h1>Contact Information</h1>
+                <button class="btn-success" onclick="saveContactInfo()">
+                    <i class="fas fa-save"></i>
+                    Save Changes
+                </button>
+            </div>
+            <div class="content-form">
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number</label>
+                    <input type="tel" id="contactPhone" value="+254 714 878363">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" value="wanguicarol29@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="contactTitle">Contact Section Title</label>
+                    <input type="text" id="contactTitle" value="Get In Touch">
+                </div>
+                <div class="form-group">
+                    <label for="contactSubtitle">Contact Section Subtitle</label>
+                    <textarea id="contactSubtitle" rows="2">Ready to enhance your research capabilities? Contact us today!</textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section class="admin-section" id="messages">
+            <div class="section-header">
+                <h1>Contact Messages</h1>
+                <button class="btn-primary" onclick="refreshMessages()">
+                    <i class="fas fa-sync"></i>
+                    Refresh
+                </button>
+            </div>
+            <div class="messages-container">
+                <div class="messages-list" id="messagesList">
+                    <!-- Messages will be loaded here -->
+                    <div class="message-item">
+                        <div class="message-header">
+                            <div class="message-from">
+                                <strong>John Doe</strong>
+                                <span class="message-email">john@example.com</span>
+                            </div>
+                            <div class="message-date">
+                                <span>2024-03-15 10:30 AM</span>
+                            </div>
+                        </div>
+                        <div class="message-service">
+                            <span class="service-tag">Turnitin</span>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello, I'm interested in your Turnitin service. Could you please provide more information about pricing and availability?</p>
+                        </div>
+                        <div class="message-actions">
+                            <button class="btn-reply" onclick="replyToMessage(1)">
+                                <i class="fas fa-reply"></i>
+                                Reply
+                            </button>
+                            <button class="btn-delete" onclick="deleteMessage(1)">
+                                <i class="fas fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for New Service -->
+    <div class="modal-overlay" id="newServiceModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Add New Service</h2>
+                <button class="modal-close" onclick="closeModal('newServiceModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content">
+                <form id="newServiceForm">
+                    <div class="form-group">
+                        <label>Service ID</label>
+                        <input type="text" id="newServiceId" placeholder="e.g., new-service">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Name</label>
+                        <input type="text" id="newServiceName" placeholder="Service Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Class</label>
+                        <input type="text" id="newServiceIcon" placeholder="fas fa-icon-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="newServiceDescription" rows="3" placeholder="Service description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Features (one per line)</label>
+                        <textarea id="newServiceFeatures" rows="4" placeholder="Feature 1&#10;Feature 2&#10;Feature 3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Pricing</label>
+                        <input type="text" id="newServicePricing" placeholder="Pricing information">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('newServiceModal')">Cancel</button>
+                <button class="btn-primary" onclick="createNewService()">Create Service</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
